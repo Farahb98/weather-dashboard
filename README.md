@@ -7,24 +7,18 @@ Weather Dashboard
 ## Table of Contents
 
 - [Project Description](#project-description)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Project Description
 
-This is a weather dashboard that provides details about the weather iny any city typed in the search box
+This is a weather dashboard that provides details about the weather iny any city typed in the search box. This makes it the perfect tool for any users looking to travel.
 
-## Installation
-
-Provide step-by-step instructions on how to install and set up your project. Include any dependencies that need to be installed and how to install them.
 
 ## Features
 
-Once a city is typed in, users can see the temperature, wind and humidity stats for the next 5 days.
+Once a city is typed in, users can see the temperature, wind and humidity stats for the next 5 days. 
 
 ## Technologies Used
 
@@ -38,5 +32,12 @@ Once a city is typed in, users can see the temperature, wind and humidity stats 
 MIT
 
 ## Additional Sections (optional)
+![image](https://github.com/Farahb98/weather-dashboard/assets/136191926/f2f4e645-5207-4681-92b8-306e427a2fa8)
 
-![Alt text](image.png)
+GIT URL
+
+Deployed URL
+
+
+
+
