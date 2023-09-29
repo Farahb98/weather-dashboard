@@ -17,7 +17,7 @@ body {
     color: #fff;
   }
 
-  container {
+  .container {
     display: flex;
     gap: 35px;
     padding: 30px;
