@@ -1,11 +1,33 @@
 var storage =
   JSON.parse(localStorage.getItem("storage")) ??
   localStorage.setItem("storage", JSON.stringify([]));
+var currentCity = localStorage.getItem("currentCity") ?? "";
 
 function getStorage() {
   var storedCities = JSON.parse(localStorage.getItem("storage"));
   if (storedCities !== null) {
     storage = storedCities;
+  }
+  if (currentCity !== null) {
+    displayWeatherInfo(currentCity);
+  }
+  renderButtons();
+}
+
+function renderButtons() {
+  $("#history").empty();
+  if (storage.length === 0) {
+    return;
+  } else {
+    for (var i = 0; i < storage?.length; i++) {
+      if (storage.indexOf(storage[i]) !== i) {
+        continue;
+      }
+      var storageBtn = $(
+        `<button type="button" class="btn btn-success" data-city="${storage[i]}"> ${storage[i]}</button>`
+      );
+      $("#history").append(storageBtn);
+    }
   }
 }
 
@@ -38,8 +60,11 @@ function displayWeatherInfo(query_param) {
         alert("City Name Not Found");
         storage.pop();
         localStorage.setItem("storage", JSON.stringify(storage));
+        renderButtons();
         return;
       }
+      currentCity = data.name;
+      localStorage.setItem("currentCity", currentCity);
       var headerEl = $("<div>");
       headerEl.addClass("d-flex align-items-center");
       var HeadingEl = $(
@@ -118,8 +143,16 @@ function displayWeatherInfo(query_param) {
 
 getStorage();
 
+$("#history").on("click", "button", function () {
+  $("#today").empty();
+  var city = $(this).attr("data-city");
+  displayWeatherInfo(city);
+  renderButtons();
+});
+
 $("#search-button").on("click", function (event) {
   event.preventDefault();
   displayWeatherInfo($("#search-input").val().trim());
   $("#search-input").val("");
+  renderButtons();
 });
