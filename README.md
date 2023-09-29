@@ -15,6 +15,9 @@ Weather Dashboard
 
 This is a weather dashboard that provides details about the weather iny any city typed in the search box. This makes it the perfect tool for any users looking to travel.
 
+Git URL: https://github.com/Farahb98/weather-dashboard.git
+Deployed URL: https://farahb98.github.io/weather-dashboard/
+
 
 ## Features
 
@@ -34,9 +37,7 @@ MIT
 ## Additional Sections (optional)
 ![image](https://github.com/Farahb98/weather-dashboard/assets/136191926/f2f4e645-5207-4681-92b8-306e427a2fa8)
 
-GIT URL
 
-Deployed URL
 
 
 
