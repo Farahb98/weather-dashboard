@@ -16,3 +16,9 @@ body {
     padding: 18px 0;
     color: #fff;
   }
+
+  container {
+    display: flex;
+    gap: 35px;
+    padding: 30px;
+  }
