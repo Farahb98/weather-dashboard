@@ -1,96 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-gb">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>Weather Dashboard</h1>
-    <div class="container">
-      <h3>Enter a City Name</h3>
-      <input type="text" placeholder="E.g, New York, London, Tokyo" />
-      <button class="search-btn">Search</button>
-      <div class="separator"></div>
+    <header class="container text-center p-4">
+      <h1 class="fw-bold">Weather Dashboard</h1>
+    </header>
 
-      <button class="location-btn">Use Current Location</button>
-    </div>
-    <div class="weather-data">
-      <div class="current-weather">
-        <div class="details">
-          <h2>London( 2023-09-28)</h2>
-          <h4>Temperature: 19.10°C</h4>
-          <h6>Wind: 4.31 M/S</h6>
-          <h6>Humidity: 79%</h6>
-        </div>
-        <div class="icon">
-          <img
-            src="https://openweathermap.org/img/wn/10d@4x.png"
-            alt="weather icon"
-          />
-          <h4>Moderate Rain</h4>
-        </div>
+    <div class="container" style="max-width: 1400px">
+      <div class="row">
+        <aside class="col-lg-3 py-3">
+          <h2 id="form-heading" class="mt-1 fw-semibold">Enter a City:</h2>
+          <form id="search-form">
+            <input
+              class="form-control"
+              type="text"
+              id="search-input"
+              placeholder="London"
+              aria-labelledby="form-heading"
+              aria-controls="forecast"
+            />
+            <div class="d-grid py-3">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="search-button"
+                aria-label="submit search"
+              >
+                Submit
+              </button>
+              <hr />
+            </div>
+          </form>
+          <div class="list-group gap-3" id="history"></div>
+        </aside>
 
-        <div class="days-forecast">
-          <h2>5-Day Forecast</h2>
-          <ul class="weather-cards">
-            <li class="card">
-              <h3>( 2023-09-28)</h3>
-              <img
-                src="https://openweathermap.org/img/wn/10d@4x.png"
-                alt="weather icon"
-              />
-              <h6>Temp: 19.10°C</h6>
-              <h6>Wind: 4.31 M/S</h6>
-              <h6>Humidity: 79%%</h6>
-            </li>
-
-            <li class="card">
-              <h3>( 2023-09-28 )</h3>
-              <img
-                src="https://openweathermap.org/img/wn/10d@4x.png"
-                alt="weather icon"
-              />
-              <h6>Temp: __C</h6>
-              <h6>Wind: __ M/S</h6>
-              <h6>Humidity: __%</h6>
-            </li>
-
-            <li class="card">
-              <h3>( 2023-09-28)</h3>
-              <img
-                src="https://openweathermap.org/img/wn/10d@4x.png"
-                alt="weather icon"
-              />
-              <h6>Temp: __C</h6>
-              <h6>Wind: __ M/S</h6>
-              <h6>Humidity: __%</h6>
-            </li>
-
-            <li class="card">
-              <h3>( 2023-09-28 )</h3>
-              <img
-                src="https://openweathermap.org/img/wn/10d@4x.png"
-                alt="weather icon"
-              />
-              <h6>Temp: __C</h6>
-              <h6>Wind: __ M/S</h6>
-              <h6>Humidity: __%</h6>
-            </li>
-            <li class="card">
-              <h3>( 2023-09-28 )</h3>
-              <img
-                src="https://openweathermap.org/img/wn/10d@4x.png"
-                alt="weather icon"
-              />
-              <h6>Temp: __C</h6>
-              <h6>Wind: __ M/S</h6>
-              <h6>Humidity: __%</h6>
-            </li>
-          </ul>
+        <div class="col-lg-9 pb-3">
+          <section
+            id="today"
+            class="mt-3 p-3 rounded-2"
+            role="region"
+            aria-live="polite"
+          ></section>
+          <section
+            id="forecast"
+            class="mt-3 row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-xl-5 g-4"
+            role="region"
+            aria-live="polite"
+          ></section>
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
